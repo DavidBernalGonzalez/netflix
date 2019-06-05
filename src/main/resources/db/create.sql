@@ -162,3 +162,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 INSERT INTO actors (name)
 VALUES ('Jordi'), ('Matias'), ('Jaume');
+select * from actors;
+
+INSERT INTO categories (name)
+VALUES ('Bélicas'), ('Comedia');
+select * from categories;
