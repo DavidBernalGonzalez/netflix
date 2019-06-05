@@ -1,8 +1,8 @@
 # API tv shows :ledger:
 ## Done Task: :end: 
-- [x] List of all actors
+- [x] List of all actors (VALIDATION PENDING)
+- [x] List an actor (VALIDATION PENDING)
 ## TODO Task: :soon:
-- [ ] List an actor
 - [ ] Include T. V. series in different categories
 - [ ] List of all actors
 ### BBDD
@@ -13,6 +13,13 @@
 ### Exercice 1
   **URL:** http://localhost:8088/netflix/v1/actors
   
-  **Result:** List of all actors
+  **Task:** List of all actors
   
   ![alt text]( https://github.com/DavidBernalGonzalez/netflix/blob/master/img/Screenshot_1.png)
+  
+### Exercice 2 
+  **URL:** http://localhost:8088/netflix/v1/actors
+  
+  **Task:** List of all actors
+  
+  ![alt text]( https://github.com/DavidBernalGonzalez/netflix/blob/master/img/Screenshot_3.png)
