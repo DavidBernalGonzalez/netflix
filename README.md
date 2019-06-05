@@ -1,7 +1,7 @@
 # API tv shows :ledger:
 ## Done Task: :end: 
-- [x] Ex1: List of all actors (VALIDATION PENDING)
-- [x] Ex2: List an actor (VALIDATION PENDING)
+- [x] Ex1: List of all actors (DONE)
+- [x] Ex2: List an actor (DONE)
 ## TODO Task: :soon:
 - [ ] Ex3: Include T. V. series in different categories
 - [ ] Ex4: List of all actors
