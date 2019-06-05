@@ -18,7 +18,7 @@
   ![alt text]( https://github.com/DavidBernalGonzalez/netflix/blob/master/img/Screenshot_1.png)
   
 ### Exercice 2 
-  **URL:** http://localhost:8088/netflix/v1/actors
+  **URL:** http://localhost:8088/netflix/v1/actors/{id}
   
   **Task:** List an actor
   
