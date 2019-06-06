@@ -26,7 +26,7 @@ public class Category implements Serializable {
 	private String name;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
-	private List<TvShow> tvShows;
+	private List<TvShowCategory> tvShowCategory;
 
 	public Long getId() {
 		return id;
@@ -44,12 +44,14 @@ public class Category implements Serializable {
 		this.name = name;
 	}
 
-	public List<TvShow> getTvShows() {
-		return tvShows;
+	public List<TvShowCategory> getTvShowCategory() {
+		return tvShowCategory;
 	}
 
-	public void setTvShows(List<TvShow> tvShows) {
-		this.tvShows = tvShows;
+	public void setTvShowCategory(List<TvShowCategory> tvShowCategory) {
+		this.tvShowCategory = tvShowCategory;
 	}
+
+	
 
 }

@@ -11,8 +11,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -41,10 +39,6 @@ public class TvShow implements Serializable {
 	@Column(name = "RECOMMENDED_AGE")
 	private byte recommendedAge;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "CATEGORY_ID", nullable = false)
-	private Category category;
-
 	@Column(name = "ADVERTISING", nullable = true)
 	private String advertising;
 
@@ -52,7 +46,10 @@ public class TvShow implements Serializable {
 	private List<Season> seasons;
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "tvShow")
-	private List<TvShowAward> tvShow_Awards;
+	private List<TvShowAward> tvShowAwards;
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "tvShow")
+	private List<TvShowCategory> tvShowCategory;
 
 	public Long getId() {
 		return id;
@@ -102,14 +99,6 @@ public class TvShow implements Serializable {
 		this.recommendedAge = recommendedAge;
 	}
 
-	public Category getCategory() {
-		return category;
-	}
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
-
 	public String getAdvertising() {
 		return advertising;
 	}
@@ -126,12 +115,19 @@ public class TvShow implements Serializable {
 		this.seasons = seasons;
 	}
 
-	public List<TvShowAward> getTvShow_Awards() {
-		return tvShow_Awards;
+	public List<TvShowAward> getTvShowAwards() {
+		return tvShowAwards;
 	}
 
-	public void setTvShow_Awards(List<TvShowAward> tvShow_Awards) {
-		this.tvShow_Awards = tvShow_Awards;
+	public void setTvShowAwards(List<TvShowAward> tvShowAwards) {
+		this.tvShowAwards = tvShowAwards;
 	}
 
+	public List<TvShowCategory> getTvShowCategory() {
+		return tvShowCategory;
+	}
+
+	public void setTvShowCategory(List<TvShowCategory> tvShowCategory) {
+		this.tvShowCategory = tvShowCategory;
+	}
 }

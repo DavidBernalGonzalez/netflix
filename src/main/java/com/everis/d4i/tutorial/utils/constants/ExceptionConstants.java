@@ -6,7 +6,7 @@ public class ExceptionConstants {
 
 	public static final String MESSAGE_INEXISTENT_SEASON = "SEASON INEXISTENT - Season does not exist";
 	public static final String MESSAGE_INEXISTENT_CHAPTER = "CHAPTER INEXISTENT - Chapter does not exist";
-
+	public static final String MESSAGE_ID_NOT_EXISTS = "ID_NOT_EXISTS - Not found element with this id";
 	public static final String INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR - An internal server error has ocurred";
 
 	private ExceptionConstants() {

@@ -3,16 +3,14 @@ package com.everis.d4i.tutorial.services.impl;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.persistence.EntityNotFoundException;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.everis.d4i.tutorial.entities.Actor;
 import com.everis.d4i.tutorial.exceptions.NetflixException;
 import com.everis.d4i.tutorial.exceptions.NotFoundException;
 import com.everis.d4i.tutorial.json.ActorRest;
-import com.everis.d4i.tutorial.json.TvShowRest;
 import com.everis.d4i.tutorial.repositories.ActorRepository;
 import com.everis.d4i.tutorial.services.ActorService;
 
@@ -40,16 +38,22 @@ public class ActorServiceImpl implements ActorService {
 	public ActorRest createActor(ActorRest actorRest) throws NetflixException {;
 		return null;
 	}
-
+//
+//	@Override
+//	public ActorRest getActorById(Long id) throws NetflixException {
+//
+//		try {
+//			return modelMapper.map(actorRepository.getOne(id), ActorRest.class);
+//		} catch (EntityNotFoundException entityNotFoundException) {
+//			throw new NotFoundException("");
+//		}
+//	}
+	
 	@Override
 	public ActorRest getActorById(Long id) throws NetflixException {
-
-		try {
-			return modelMapper.map(actorRepository.getOne(id), ActorRest.class);
-		} catch (EntityNotFoundException entityNotFoundException) {
-			throw new NotFoundException(entityNotFoundException.getMessage());
-		}
-
-	}
+		Actor actor = actorRepository.findById(id)
+				.orElseThrow(() -> new NotFoundException("error, actor not found"));
+		return modelMapper.map(actor, ActorRest.class);
+	}  
 
 }
